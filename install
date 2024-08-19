@@ -6,6 +6,17 @@ DOTFILES_DIR="$HOME/.dotfiles"
 # Destination directory for the symlinks
 DEST_DIR="$HOME"
 
+# Function to check if a file or directory should be ignored
+check_file() {
+    local file_name=$(basename "$1")
+
+    if [ "$file_name" != ".git" ] && [ "$file_name" != "install" ] && [ "$file_name" != "README.md" ] && [ "$file_name" != ".gitignore" ]; then
+        return 0
+    else
+        return 1
+    fi
+}
+
 # Recursive function to create symlinks
 create_symlinks() {
     local src_dir="$1"
@@ -13,8 +24,8 @@ create_symlinks() {
     
     # Loop through all files and directories in the current directory, including hidden ones
     find "$src_dir" -mindepth 1 -maxdepth 1 | while read -r file; do
-        # Exclude the .git directory and the install file
-        if [ "$(basename "$file")" != ".git" ] && [ "$(basename "$file")" != "install" ]; then
+        # Use the check_file function to determine if we should process this file/directory
+        if check_file "$file"; then
             local rel_path="${file#$DOTFILES_DIR/}"  # Path relative to the dotfiles directory
             local dest_path="$DEST_DIR/$rel_path"    # Full path in the destination
 
@@ -40,7 +51,5 @@ echo "All symlinks have been created."
 
 # Rebuilding fonts cache
 echo "Rebuilding fonts' cache..."
-
 fc-cache -f -v
-
-echo "The fonts' cache has been rebuilt"
+echo "The fonts' cache has been rebuilt."
