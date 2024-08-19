@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# Dotfiles directory
+DOTFILES_DIR="$HOME/.dotfiles" 
+
+# Destination directory for the symlinks
+DEST_DIR="$HOME"
+
+# Recursive function to create symlinks
+create_symlinks() {
+    local src_dir="$1"
+    local dest_dir="$2"
+    
+    # Loop through all files and directories in the current directory, including hidden ones
+    find "$src_dir" -mindepth 1 -maxdepth 1 | while read -r file; do
+        # Exclude the .git directory and the install file
+        if [ "$(basename "$file")" != ".git" ] && [ "$(basename "$file")" != "install" ]; then
+            local rel_path="${file#$DOTFILES_DIR/}"  # Path relative to the dotfiles directory
+            local dest_path="$DEST_DIR/$rel_path"    # Full path in the destination
+
+            if [ -d "$file" ]; then
+                # If it's a directory, create the destination directory if it doesn't exist
+                mkdir -p "$dest_path"
+                
+                # Recursively call the function to process the directory contents
+                create_symlinks "$file" "$dest_path"
+            else
+                # If it's a file, create the symlink
+                ln -sfn "$file" "$dest_path"
+                echo "Created symlink for $rel_path"
+            fi
+        fi
+    done
+}
+
+# Start creating symlinks
+create_symlinks "$DOTFILES_DIR" "$DEST_DIR"
+
+echo "All symlinks have been created."
+
+# Rebuilding fonts cache
+echo "Rebuilding fonts' cache..."
+
+fc-cache -f -v
+
+echo "The fonts' cache has been rebuilt"
