@@ -74,3 +74,19 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(setq org-hide-emphasis-markers t)
+
+(defun my-org-mode-setup ()
+  (setq org-list-allow-alphabetical t) ;; Permette lettere per le liste
+  (setq org-list-demote-modify-bullet '(("+" . "•") ("-" . "•"))) ;; Sostituisci il bullet
+
+  ;; Sostituisce i trattini con i punti elenco
+  (font-lock-add-keywords
+   nil
+   '(("-" . 'org-list-bullet-face))))
+
+(add-hook 'org-mode-hook 'my-org-mode-setup)
+
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
