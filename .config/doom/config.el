@@ -77,16 +77,10 @@
 
 (setq org-hide-emphasis-markers t)
 
-(defun my-org-mode-setup ()
-  (setq org-list-allow-alphabetical t) ;; Permette lettere per le liste
-  (setq org-list-demote-modify-bullet '(("+" . "•") ("-" . "•"))) ;; Sostituisci il bullet
-
-  ;; Sostituisce i trattini con i punti elenco
-  (font-lock-add-keywords
-   nil
-   '(("-" . 'org-list-bullet-face))))
-
-(add-hook 'org-mode-hook 'my-org-mode-setup)
-
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+(font-lock-add-keywords
+ 'org-mode
+ '(("^[[:space:]]*\\(-\\) "
+        (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
