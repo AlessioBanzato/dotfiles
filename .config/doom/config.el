@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-tokyo-night)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -75,6 +75,12 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+;; Set general font
+
+(setq doom-font (font-spec :family "Ubuntu mono"  :size 18 :weight 'regular))
+
+;; org mode config
+
 (setq org-hide-emphasis-markers t)
 
 (require 'org-bullets)
@@ -85,24 +91,34 @@
  '(("^[[:space:]]*\\(-\\) "
         (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 
-(let* ((variable-tuple
-          (cond ((x-list-fonts "ETBembo")         '(:font "ETBembo"))
-                ((x-list-fonts "Source Sans Pro") '(:font "Source Sans Pro"))
-                ((x-list-fonts "Lucida Grande")   '(:font "Lucida Grande"))
-                ((x-list-fonts "Verdana")         '(:font "Verdana"))
-                ((x-family-fonts "Sans Serif")    '(:family "Sans Serif"))
-                (nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
-         (base-font-color     (face-foreground 'default nil 'default))
-         (headline           `(:inherit default :weight bold :foreground ,base-font-color)))
+(add-hook 'org-mode-hook
+          (lambda ()
+            (let* ((variable-tuple
+                    (cond ((x-list-fonts "ETBembo")         '(:font "ETBembo"))
+                          ((x-list-fonts "Source Sans Pro") '(:font "Source Sans Pro"))
+                          ((x-list-fonts "Lucida Grande")   '(:font "Lucida Grande"))
+                          ((x-list-fonts "Verdana")         '(:font "Verdana"))
+                          ((x-family-fonts "Sans Serif")    '(:family "Sans Serif"))
+                          (nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
+                   (base-font-color     (face-foreground 'default nil 'default))
+                   (headline            `(:inherit default :weight bold :foreground ,base-font-color))
+                   (level-colors        '("#FF5733" ; org-level-1 color
+                                          "#33FF57" ; org-level-2 color
+                                          "#3357FF" ; org-level-3 color
+                                          "#FF33A8" ; org-level-4 color
+                                          "#FFBD33" ; org-level-5 color
+                                          "#33FFF0" ; org-level-6 color
+                                          "#FF5733" ; org-level-7 color
+                                          "#33FFBD"))) ; org-level-8 color
 
-    (custom-theme-set-faces
-     'user
-     `(org-level-8 ((t (,@headline ,@variable-tuple))))
-     `(org-level-7 ((t (,@headline ,@variable-tuple))))
-     `(org-level-6 ((t (,@headline ,@variable-tuple))))
-     `(org-level-5 ((t (,@headline ,@variable-tuple))))
-     `(org-level-4 ((t (,@headline ,@variable-tuple :height 1.1))))
-     `(org-level-3 ((t (,@headline ,@variable-tuple :height 1.25))))
-     `(org-level-2 ((t (,@headline ,@variable-tuple :height 1.5))))
-     `(org-level-1 ((t (,@headline ,@variable-tuple :height 1.75))))
-     `(org-document-title ((t (,@headline ,@variable-tuple :height 2.0 :underline nil))))))
+              (custom-theme-set-faces
+               'user
+               `(org-level-8 ((t (,@headline ,@variable-tuple :foreground ,(nth 7 level-colors)))))
+               `(org-level-7 ((t (,@headline ,@variable-tuple :foreground ,(nth 6 level-colors)))))
+               `(org-level-6 ((t (,@headline ,@variable-tuple :foreground ,(nth 5 level-colors)))))
+               `(org-level-5 ((t (,@headline ,@variable-tuple :foreground ,(nth 4 level-colors)))))
+               `(org-level-4 ((t (,@headline ,@variable-tuple :foreground ,(nth 3 level-colors) :height 1.1))))
+               `(org-level-3 ((t (,@headline ,@variable-tuple :foreground ,(nth 2 level-colors) :height 1.25))))
+               `(org-level-2 ((t (,@headline ,@variable-tuple :foreground ,(nth 1 level-colors) :height 1.5))))
+               `(org-level-1 ((t (,@headline ,@variable-tuple :foreground ,(nth 0 level-colors) :height 1.75))))
+               `(org-document-title ((t (,@headline ,@variable-tuple :height 2.0 :underline nil))))))))
