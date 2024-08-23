@@ -21,9 +21,9 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
+(setq doom-font (font-spec :family "Ubuntu mono" :size 18 :weight 'regular))
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
-;;
+
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 ;; refresh your font settings. If Emacs still can't find your font, it likely
@@ -31,8 +31,9 @@
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-tokyo-night)
+;; `load-theme' function.
+
+(setq doom-theme 'doom-dracula)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -75,10 +76,6 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; Set general font
-
-(setq doom-font (font-spec :family "Ubuntu mono"  :size 18 :weight 'regular))
-
 ;; org mode config
 
 (setq org-hide-emphasis-markers t)
@@ -102,15 +99,14 @@
                           (nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
                    (base-font-color     (face-foreground 'default nil 'default))
                    (headline            `(:inherit default :weight bold :foreground ,base-font-color))
-                   (level-colors        '("#FF5733" ; org-level-1 color
-                                          "#33FF57" ; org-level-2 color
-                                          "#3357FF" ; org-level-3 color
-                                          "#FF33A8" ; org-level-4 color
-                                          "#FFBD33" ; org-level-5 color
-                                          "#33FFF0" ; org-level-6 color
-                                          "#FF5733" ; org-level-7 color
+                   (level-colors        '("#BD93F9" ; org-level-1 color
+                                          "#FF79C6" ; org-level-2 color
+                                          "#50FA7B" ; org-level-3 color
+                                          "#8BE9FD" ; org-level-4 color
+                                          "#FF5555" ; org-level-5 color
+                                          "#FFB86C" ; org-level-6 color
+                                          "#F1FA8C" ; org-level-7 color
                                           "#33FFBD"))) ; org-level-8 color
-
               (custom-theme-set-faces
                'user
                `(org-level-8 ((t (,@headline ,@variable-tuple :foreground ,(nth 7 level-colors)))))
