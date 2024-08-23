@@ -118,3 +118,10 @@
                `(org-level-2 ((t (,@headline ,@variable-tuple :foreground ,(nth 1 level-colors) :height 1.5))))
                `(org-level-1 ((t (,@headline ,@variable-tuple :foreground ,(nth 0 level-colors) :height 1.75))))
                `(org-document-title ((t (,@headline ,@variable-tuple :height 2.0 :underline nil))))))))
+
+
+;; separate emacs from the clipboard
+(setq x-select-enable-clipboard nil)
+
+;; set specific keybinding to paste from clipboard
+(global-set-key (kbd "C-c y") 'x-clipboard-yank)
