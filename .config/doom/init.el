@@ -189,3 +189,5 @@
        :config
        ;;literate
        (default +bindings +smartparens))
+
+(setq package-check-signature nil)
