@@ -123,8 +123,13 @@
 ;; separate emacs from the clipboard
 (setq x-select-enable-clipboard nil)
 
-;; set specific keybinding to paste from clipboard
-(global-set-key (kbd "C-c y") 'x-clipboard-yank)
+;; CUT-COPY-PASTE system
+;; Copy and Cut -> Clipboard + Emacs
+;; Copy while deleting with C or M keys -> saves only into Emacs
+
+(global-set-key (kbd "C-c y") 'x-clipboard-yank) ;; Specific keybinding to paste from clipboard
+(global-set-key (kbd "M-w") 'clipboard-kill-ring-save)
+(global-set-key (kbd "C-w") 'clipboard-kill-region)
 
 ;; LaTeX configuration
 (after! tex
