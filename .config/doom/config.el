@@ -21,7 +21,7 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-(setq doom-font (font-spec :family "Ubuntu mono" :size 18 :weight 'regular))
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 16))
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
 
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
@@ -125,3 +125,19 @@
 
 ;; set specific keybinding to paste from clipboard
 (global-set-key (kbd "C-c y") 'x-clipboard-yank)
+
+;; LaTeX configuration
+(after! tex
+  ;; Set pdf-tools as default pdf viewer
+  (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
+        TeX-source-correlate-start-server t)  ;; sync server activation
+  ;; tex-pdf sync
+  (add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer))
+
+;; default pdf size in viewer
+(setq-default pdf-view-display-size 'fit-width)
+
+;; rendering quality
+(setq pdf-view-use-scaling t
+      pdf-view-use-imagemagick nil
+      pdf-view-resolution 300)  ;; <= 300

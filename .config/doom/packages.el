@@ -50,3 +50,7 @@
 ;; (unpin! t)
 
 (package! org-bullets)
+
+;; LaTeX-related packages
+(package! auctex-latexmk)
+(package! pdf-tools)
