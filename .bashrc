@@ -120,7 +120,7 @@ alias la="ls -a"
 alias cl="clear"
 alias full_update="sudo apt update && sudo apt -y upgrade"
 alias copate="poweroff"
-alias compile_thesis="rm -rf ~/Tesi/build/ && latexmk -shell-escape ~/Tesi/thesis.tex"
+alias compile_thesis="rm -rf ~/Documents/Laurea/Tesi/build/ && latexmk -shell-escape ~/Documents/Laurea/Tesi/thesis.tex"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
