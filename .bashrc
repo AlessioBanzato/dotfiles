@@ -142,5 +142,5 @@ export NVM_DIR="$HOME/.nvm"
 export PS1='\h:\w\$ '
 
 # typst
-export TYPST_INSTALL="$HOME/.typst"
-export PATH=$TYPST_INSTALL/bin:$PATH
+#export TYPST_INSTALL="$HOME/.typst"
+#export PATH=$TYPST_INSTALL/bin:$PATH
