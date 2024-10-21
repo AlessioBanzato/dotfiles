@@ -112,15 +112,11 @@ fi
 
 # programs aliases
 alias emacs="emacsclient -c -a 'emacs'"
-alias sudo-emacs="sudo emacsclient -c -a 'emacs'"
-#alias alacritty="env WINIT_UNIX_BACKEND=x11 alacritty"
 
 # commands aliases
 alias la="ls -a"
 alias cl="clear"
-alias full_update="sudo apt update && sudo apt -y upgrade"
 alias copate="poweroff"
-alias compile_thesis="rm -rf ~/Documents/Laurea/Tesi/build/ && latexmk -shell-escape ~/Documents/Laurea/Tesi/thesis.tex"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
