@@ -9,4 +9,20 @@ There is also an `install` script that creates symlinks and does a rebuild of th
 ```bash
 chmod +x install
 ./install
-```
+```.
+
+## Repo structure (directories only)
+
+.dotfiles/
+├── .config
+│   ├── alacritty
+│   ├── doom
+│   ├── hypr
+│   ├── neofetch
+│   └── waybar
+├── .local
+│   └── share
+│       └── fonts
+│           └── JetBrainsMono
+└── Pictures
+    └── Wallpapers
