@@ -61,9 +61,14 @@ button:hover {
 #cpu,
 #memory,
 #network,
-#pulseaudio
+#pulseaudio,
+#custom-wlsunset
 {
     padding: 0 10px;
+}
+
+#custom-wlsunset {
+    color: @yellow;
 }
 
 #pulseaudio {

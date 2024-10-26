@@ -10,12 +10,18 @@
             "hyprland/workspaces",
         ],
         "modules-right": [
+            "custom/wlsunset",
             "pulseaudio",
             "network",
             "memory",
             "battery",
             "clock",
         ],
+        "custom/wlsunset": {
+            "format": "",
+            "on-click": "pkill wlsunset",
+            "on-click-right": "wlsunset -S 05:30 -s 05:31",
+        },
         "hyprland/window": {
             "format": "{}",
             "max-length": 35,
@@ -58,7 +64,7 @@
             },
             "format": "{icon}  {capacity}%",
             "format-full": "{icon}  {capacity}%",
-            "format-charging": "  {capacity}%",
+            "format-charging": "  {capacity}%",
             "format-plugged": "  {capacity}%",
             "format-alt": "{time} {icon}",
             "format-icons": ["", "", "", "", ""]
