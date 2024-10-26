@@ -13,6 +13,7 @@ chmod +x install
 
 ## Repo structure (directories only)
 
+```
 .dotfiles/
 ├── .config
 │   ├── alacritty
@@ -26,3 +27,4 @@ chmod +x install
 │           └── JetBrainsMono
 └── Pictures
     └── Wallpapers
+```
