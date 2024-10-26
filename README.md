@@ -9,7 +9,7 @@ There is also an `install` script that creates symlinks and does a rebuild of th
 ```bash
 chmod +x install
 ./install
-```.
+```
 
 ## Repo structure (directories only)
 
