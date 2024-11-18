@@ -16,8 +16,7 @@
         "network",
         "pulseaudio",
         "battery",
-        "clock",
-        "custom/power"
+        "clock"
     ],
     "wlr/taskbar": {
         "format": "{icon}",
@@ -32,17 +31,7 @@
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "{name}: {icon}",
-        "format-icons": {
-            "default": "",
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            //"active": "󱓻",
-            //"urgent": "󱓻"
-        },
+        "format": "{name}",
         "persistent_workspaces": {
             "1": [],
             "2": [],
