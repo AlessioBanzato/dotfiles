@@ -7,11 +7,13 @@ export PATH="$HOME/.config/emacs/bin:$PATH"
 
 PS1='[\u@\h \W]\$ '
 
-# aliases
+### ALIASES ###
 
 alias l="ls --color=auto"
 alias la="ls -a --color=auto"
 alias ll="ls -l --color=auto"
+
+alias cl="clear"
 
 alias copate="systemctl poweroff"
 
@@ -30,4 +32,5 @@ if [[ -r /usr/share/bash-completion/bash_completion ]]; then
   . /usr/share/bash-completion/bash_completion
 fi
 
+### STARSHIP ###
 eval "$(starship init bash)"
