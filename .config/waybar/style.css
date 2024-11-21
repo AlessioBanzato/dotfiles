@@ -1,3 +1,5 @@
+@import url("../../.dotfiles/.config/waybar/colors.css");
+
 * {
   border: none;
   border-radius: 0;
@@ -5,11 +7,10 @@
   font-family: JetBrainsMono Nerd Font;
   font-size: 13px;
   font-weight: bold;
-
 }
 
 window#waybar {
-  background-color: #282a36;
+  background-color: @background;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -29,24 +30,24 @@ window#waybar.hidden {
   padding: 2px 12px;
   margin: 4px 3px;
   border-radius: 4px;
-  background-color: #44475a;
-  color: #cdd6f4;
+  background-color: @background;
+  color: @foreground;
 }
 
 #workspaces button.active {
   color: #1e1e2e;
-  background-color: #cdd6f4;
+  background-color: @foreground;
 }
 
 #workspaces button:hover {
   box-shadow: inherit;
   text-shadow: inherit;
   color: #1e1e2e;
-  background-color: #cdd6f4;
+  background-color: @comment;
 }
 
 #workspaces button.urgent {
-  background-color: #f38ba8;
+  background-color: @red;
 }
 
 #cpu,
@@ -64,11 +65,11 @@ window#waybar.hidden {
   border-radius: 4px;
   margin: 4px 3px;
   padding: 2px 12px;
-  background-color: #282c34;
-  color: #282c34;
+  background-color: @background;
+  color: @background;
 }
 #custom-kernel {
-  background-color: #ff6c6b;
+  background-color: @red;
 }
 
 #custom-power {
@@ -95,22 +96,22 @@ window#waybar.hidden {
 
 
 #memory {
-  background-color: #46d9ff;
+  background-color: @orange;
 }
 
 #battery {
-  background-color: #f38ba8;
+  background-color: @green;
 }
 
 #battery.warning,
 #battery.critical,
 #battery.urgent {
-  background-color: #ff6c6b;
-  color: #f1fa8c;
+  background-color: @red;
+  color: @yellow;
 }
 
 #battery.charging {
-  background-color: #98be65;
+  background-color: @green;
   color: #181825;
 }
 
@@ -119,16 +120,16 @@ window#waybar.hidden {
 }
 
 #pulseaudio {
-  background-color: #46d9ff;
+  background-color: @pink;
 }
 
 #network {
-  background-color: #98be65;
+  background-color: @cyan;
   padding-right: 17px;
 }
 
 #clock {
-  background-color: #cba6f7;
+  background-color: @purple;
 }
 
 tooltip {
@@ -143,5 +144,5 @@ tooltip label {
 }
 
 #custom-wlsunset {
-  background-color: #f1fa8c;
+  background-color: @yellow;
 }
