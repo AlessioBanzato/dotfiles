@@ -61,7 +61,8 @@ window#waybar.hidden {
 #custom-wlsunset,
 #network,
 #clock,
-#tray {
+#tray,
+#custom-keyboard {
   border-radius: 4px;
   margin: 4px 3px;
   padding: 2px 12px;
@@ -145,4 +146,8 @@ tooltip label {
 
 #custom-wlsunset {
   background-color: @yellow;
+}
+
+#custom-keyboard {
+  background-color: @red;
 }
