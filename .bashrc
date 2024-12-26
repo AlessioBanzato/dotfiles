@@ -17,6 +17,7 @@ alias cl="clear"
 
 alias copate="systemctl poweroff"
 
+alias reload_waybar="pkill waybar && waybar & disown"
 
 case ${TERM} in
   Eterm*|alacritty*|aterm*|foot*|gnome*|konsole*|kterm*|putty*|rxvt*|tmux*|xterm*)
