@@ -10,7 +10,7 @@ stringa_di_sostituzione="  US"
 
 # Check Waybar config file
 if [ ! -f "$file_json" ]; then
-    echo "Errore: il file $file_json non esiste."
+    notify-send "Error: $file_json does not exist"
     exit 1
 fi
 
@@ -18,7 +18,9 @@ fi
 sed -i "s/${stringa_da_cercare}/${stringa_di_sostituzione}/g" "$file_json"
 
 # Waybar reload
-reload_waybar
+pkill waybar
+
+waybar & disown
 
 # Notify
 notify-send "Keyboard layout changed to US"
