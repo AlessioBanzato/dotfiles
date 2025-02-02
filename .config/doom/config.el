@@ -140,10 +140,9 @@
   ;; tex-pdf sync
   (add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer))
 
-;; default pdf size in viewer
-(setq-default pdf-view-display-size 'fit-width)
-
-;; rendering quality
-(setq pdf-view-use-scaling t
-      pdf-view-use-imagemagick nil
-      pdf-view-resolution 300)  ;; <= 300
+(use-package pdf-tools
+  :defer t
+  :commands (pdf-loader-install)
+  :mode "\\.pdf\\'"
+  :init (pdf-loader-install)
+  :config (add-to-list 'revert-without-query ".pdf"))
