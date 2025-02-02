@@ -88,41 +88,8 @@
  '(("^[[:space:]]*\\(-\\) "
         (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 
-
-
-;; (add-hook 'org-mode-hook
-;;           (lambda ()
-;;             (let* ((variable-tuple
-;;                     (cond ((x-list-fonts "ETBembo")         '(:font "ETBembo"))
-;;                           ((x-list-fonts "Source Sans Pro") '(:font "Source Sans Pro"))
-;;                           ((x-list-fonts "Lucida Grande")   '(:font "Lucida Grande"))
-;;                           ((x-list-fonts "Verdana")         '(:font "Verdana"))
-;;                           ((x-family-fonts "Sans Serif")    '(:family "Sans Serif"))
-;;                           (nil (warn "Cannot find a Sans Serif Font.  Install Source Sans Pro."))))
-;;                    (base-font-color     (face-foreground 'default nil 'default))
-;;                    (headline            `(:inherit default :weight bold :foreground ,base-font-color))
-;;                    (level-colors        '("#BD93F9" ; org-level-1 color
-;;                                           "#FF79C6" ; org-level-2 color
-;;                                           "#50FA7B" ; org-level-3 color
-;;                                           "#8BE9FD" ; org-level-4 color
-;;                                           "#FF5555" ; org-level-5 color
-;;                                           "#FFB86C" ; org-level-6 color
-;;                                           "#F1FA8C" ; org-level-7 color
-;;                                           "#33FFBD"))) ; org-level-8 color
-;;               (custom-theme-set-faces
-;;                'user
-;;                `(org-level-8 ((t (,@headline ,@variable-tuple :foreground ,(nth 7 level-colors)))))
-;;                `(org-level-7 ((t (,@headline ,@variable-tuple :foreground ,(nth 6 level-colors)))))
-;;                `(org-level-6 ((t (,@headline ,@variable-tuple :foreground ,(nth 5 level-colors)))))
-;;                `(org-level-5 ((t (,@headline ,@variable-tuple :foreground ,(nth 4 level-colors)))))
-;;                `(org-level-4 ((t (,@headline ,@variable-tuple :foreground ,(nth 3 level-colors) :height 1.1))))
-;;                `(org-level-3 ((t (,@headline ,@variable-tuple :foreground ,(nth 2 level-colors) :height 1.25))))
-;;                `(org-level-2 ((t (,@headline ,@variable-tuple :foreground ,(nth 1 level-colors) :height 1.5))))
-;;                `(org-level-1 ((t (,@headline ,@variable-tuple :foreground ,(nth 0 level-colors) :height 1.75))))
-;;                `(org-document-title ((t (,@headline ,@variable-tuple :height 2.0 :underline nil))))))))
-
 ;; separate emacs from the clipboard
-(setq x-select-enable-clipboard nil)
+(setq select-enable-clipboard nil)
 
 ;; CUT-COPY-PASTE system
 ;; Copy and Cut -> Clipboard + Emacs
@@ -140,6 +107,7 @@
   ;; tex-pdf sync
   (add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer))
 
+;; pdf-tools
 (use-package pdf-tools
   :defer t
   :commands (pdf-loader-install)

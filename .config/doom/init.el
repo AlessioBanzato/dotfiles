@@ -192,5 +192,5 @@
 
 (setq package-check-signature nil)
 
-(after! org
-  (setq org-agenda-files (directory-files-recursively "~/study" "\\.org$")))
+;;(after! org
+  ;;(setq org-agenda-files (directory-files-recursively "~/study" "\\.org$")))
