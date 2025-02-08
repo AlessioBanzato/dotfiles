@@ -7,7 +7,7 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 (setq user-full-name "Alessio Banzato"
-       user-mail-address "alessiobanzato@gmail.com")
+      user-mail-address "alessiobanzato@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -23,7 +23,7 @@
 ;;
 (setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 16))
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
-
+;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 ;; refresh your font settings. If Emacs still can't find your font, it likely
@@ -31,8 +31,7 @@
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function.
-
+;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-dracula)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
@@ -76,21 +75,6 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; org mode config
-
-(setq org-hide-emphasis-markers t)
-
-(require 'org-bullets)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-
-(font-lock-add-keywords
- 'org-mode
- '(("^[[:space:]]*\\(-\\) "
-        (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
-
-
-(setq package-check-signature nil)
-
 ;; separate emacs from the clipboard
 (setq select-enable-clipboard nil)
 
@@ -117,3 +101,31 @@
   :mode "\\.pdf\\'"
   :init (pdf-loader-install)
   :config (add-to-list 'revert-without-query ".pdf"))
+
+;; org-mode
+
+(setq org-hide-emphasis-markers t)
+
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+(font-lock-add-keywords
+ 'org-mode
+ '(("^[[:space:]]*\\(-\\) "
+        (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
+;; org-roam
+(use-package org-roam
+  :custom
+  (org-roam-directory (file-truename "~/notes/"))
+  :bind (("C-c n l" . org-roam-buffer-toggle)
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n g" . org-roam-graph)
+         ("C-c n i" . org-roam-node-insert)
+         ("C-c n c" . org-roam-capture)
+         ;; Dailies
+         ("C-c n j" . org-roam-dailies-capture-today))
+  :config
+  ;; If you're using a vertical completion framework, you might want a more informative completion interface
+  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
+  (org-roam-db-autosync-mode))
