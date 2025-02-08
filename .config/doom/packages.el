@@ -49,9 +49,11 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 
-(package! org-roam)
-
 (package! org-bullets)
+
+(package! org-roam)
+(unpin! org-roam)
+(package! org-roam-ui)
 
 (package! auctex-latexmk)
 (package! pdf-tools)

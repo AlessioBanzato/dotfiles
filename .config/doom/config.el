@@ -114,10 +114,12 @@
  '(("^[[:space:]]*\\(-\\) "
         (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 
+(after! org
+  (setq org-roam-directory (file-truename "~/notes/")
+        org-roam-graphic-viewer "/usr/bin/brave"))
+
 ;; org-roam
 (use-package org-roam
-  :custom
-  (org-roam-directory (file-truename "~/notes/"))
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
          ("C-c n g" . org-roam-graph)
@@ -129,3 +131,14 @@
   ;; If you're using a vertical completion framework, you might want a more informative completion interface
   (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
   (org-roam-db-autosync-mode))
+
+;; org-roam-ui
+(use-package! websocket
+    :after org-roam)
+
+(use-package! org-roam-ui
+    :config
+    (setq org-roam-ui-sync-theme t
+          org-roam-ui-follow t
+          org-roam-ui-update-on-save t
+          org-roam-ui-open-on-start t))
