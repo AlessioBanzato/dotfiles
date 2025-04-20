@@ -133,6 +133,9 @@
      `(org-level-1 ((t (,@headline ,@variable-tuple :foreground "#BD93F9" :height 1.75))))
      `(org-document-title ((t (,@headline ,@variable-tuple :height 2.0 :underline nil))))))
 
+(use-package olivetti
+  :hook (org-mode . olivetti-mode))
+
 ;; org-roam
 (use-package org-roam
   :config
