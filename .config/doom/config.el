@@ -136,6 +136,8 @@
 (use-package olivetti
   :hook (org-mode . olivetti-mode))
 
+(add-hook 'org-mode-hook (lambda () (display-line-numbers-mode 0)))
+
 ;; org-roam
 (use-package org-roam
   :config
