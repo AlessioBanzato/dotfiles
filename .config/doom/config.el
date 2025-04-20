@@ -118,6 +118,21 @@
   (setq org-roam-directory (file-truename "~/notes/")
         org-roam-graphic-viewer "/usr/bin/brave"))
 
+(let* ((font-name "JetBrainsMono Nerd Font")
+       (variable-tuple `(:font ,font-name))
+       (headline `(:inherit default :weight bold)))
+    (custom-theme-set-faces
+     'user
+     `(org-level-8 ((t (,@headline ,@variable-tuple :foreground "#33FFBD"))))
+     `(org-level-7 ((t (,@headline ,@variable-tuple :foreground "#F1FA8C"))))
+     `(org-level-6 ((t (,@headline ,@variable-tuple :foreground "#FFB86C"))))
+     `(org-level-5 ((t (,@headline ,@variable-tuple :foreground "#FF5555"))))
+     `(org-level-4 ((t (,@headline ,@variable-tuple :foreground "#8BE9FD" :height 1.1))))
+     `(org-level-3 ((t (,@headline ,@variable-tuple :foreground "#50FA7B" :height 1.25))))
+     `(org-level-2 ((t (,@headline ,@variable-tuple :foreground "#FF79C6" :height 1.5))))
+     `(org-level-1 ((t (,@headline ,@variable-tuple :foreground "#BD93F9" :height 1.75))))
+     `(org-document-title ((t (,@headline ,@variable-tuple :height 2.0 :underline nil))))))
+
 ;; org-roam
 (use-package org-roam
   :config
