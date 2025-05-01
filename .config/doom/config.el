@@ -138,28 +138,16 @@
 
 (add-hook 'org-mode-hook (lambda () (display-line-numbers-mode 0)))
 
-;; org-roam
-(use-package org-roam
+;; DENOTE
+
+(use-package denote
+  :bind
+  ( :map global-map
+         ("C-c n d" . denote)
+         ("C-c C-d" . denote-dired)
+         ("C-c n h" . denote-subdirectory)
+         ("C-c n r" . denote-rename-file))
   :config
-  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags:10}" 'face 'org-tag)))
-  (org-roam-db-autosync-mode))
-
-(map! :leader
-      :prefix "n"
-      :desc "org-roam" "l" #'org-roam-buffer-toggle
-      :desc "org-roam-node-insert" "i" #'org-roam-node-insert
-      :desc "org-roam-node-find" "f" #'org-roam-node-find
-      :desc "org-roam-show-graph" "g" #'org-roam-show-graph
-      :desc "org-roam-capture" "c" #'org-roam-capture
-      :desc "org-roam-dailies-capture-today" "j" #'org-roam-dailies-capture-today)
-
-;; org-roam-ui
-(use-package! websocket
-    :after org-roam)
-
-(use-package! org-roam-ui
-    :config
-    (setq org-roam-ui-sync-theme t
-          org-roam-ui-follow t
-          org-roam-ui-update-on-save t
-          org-roam-ui-open-on-start t))
+  (setq denote-directory "~/notes/")
+  (setq denote-save-buffers nil)
+  (setq denote-known-keywords '("personal" "uni" "cons")))

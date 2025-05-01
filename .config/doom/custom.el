@@ -4,8 +4,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(auctex auctex-latexmk auto-complete-auctex dash emacsql magit-section olivetti
-     org-bullets org-roam org-roam-ui pdf-tools sqlite3)))
+   '(auctex auctex-latexmk auto-complete-auctex dash denote emacsql magit-section
+     olivetti org-bullets org-roam org-roam-ui pdf-tools sqlite3)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
