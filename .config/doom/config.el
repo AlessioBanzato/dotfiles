@@ -146,7 +146,8 @@
          ("C-c n d" . denote)
          ("C-c C-d" . denote-dired)
          ("C-c n h" . denote-subdirectory)
-         ("C-c n r" . denote-rename-file))
+         ("C-c n r" . denote-rename-file)
+         ("C-c n i" . denote-link))
   :config
   (setq denote-directory "~/notes/")
   (setq denote-save-buffers nil)
