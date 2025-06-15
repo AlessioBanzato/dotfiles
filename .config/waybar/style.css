@@ -62,7 +62,8 @@ window#waybar.hidden {
 #network,
 #clock,
 #tray,
-#custom-keyboard {
+#custom-keyboard,
+#custom-username {
   border-radius: 4px;
   margin: 4px 3px;
   padding: 2px 12px;
@@ -150,4 +151,8 @@ tooltip label {
 
 #custom-keyboard {
   background-color: @red;
+}
+
+#custom-username {
+  background-color: @pink;
 }

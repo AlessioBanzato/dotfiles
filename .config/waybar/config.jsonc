@@ -7,8 +7,6 @@
         "custom/logo",
         "hyprland/workspaces"
     ],
-    "modules-center": [
-    ],
     "modules-right": [
         "tray",
         "custom/keyboard",
@@ -17,7 +15,8 @@
         "network",
         "pulseaudio",
         "battery",
-        "clock"
+        "clock",
+        "custom/username"
     ],
     "wlr/taskbar": {
         "format": "{icon}",
@@ -47,28 +46,24 @@
     },
     "memory": {
         "interval": 5,
-        "format": "󰍛  Mem: {}%",
-        "max-length": 15
+        "format": "󰍛 {}%"
     },
     "tray": {
         "spacing": 10
     },
     "clock": {
         "tooltip-format": "{calendar}",
-        "format-alt": "  {:%a, %b %d %Y}",
-        "format": "  {:%a, %b %d - %H:%M}"
+        "format-alt": "  {:%a, %b %d %Y}",
+        "format": "  {:%a, %b %d - %H:%M}"
     },
     "network": {
         "format-wifi" : "{icon}  {essid}",
         "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
         "format-ethernet": "󰀂",
-	    "format-alt" : "󱛇",
         "format-disconnected" : "󰖪",
 	    "tooltip-format-wifi": "{icon}  {essid}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
         "tooltip-format-ethernet": "󰀂  {ifname}\n⇣{bandwidthDownBytes}  ⇡{bandwidthUpBytes}",
 	    "tooltip-format-disconnected": "Disconnected",
-	    "on-click": "~/.config/rofi/wifi/wifi.sh &",
-        "on-click-right": "~/.config/rofi/wifi/wifinew.sh &",
 	    "interval": 5,
 	    "nospacing": 1,
     },
@@ -153,9 +148,14 @@
         "tooltip": false
     },
     "custom/keyboard": {
-        "format": "  US",
+        "format": "  IT",
         "on-click": "$HOME/.config/waybar/scripts/switch_eng.sh",
         "on-click-right": "$HOME/.config/waybar/scripts/switch_ita.sh",
         "tooltip": false
+    },
+    "custom/username": {
+        "format": "  {}",
+        "exec": "echo $USER",
+        "interval": "once"
     }
 }
