@@ -1,7 +1,7 @@
 @import url("../../.dotfiles/.config/waybar/colors.css");
 
 * {
-  border: none;
+  border: 2px;
   border-radius: 0;
   min-height: 0;
   font-family: JetBrainsMono Nerd Font;
@@ -10,9 +10,9 @@
 }
 
 window#waybar {
-  background-color: @background;
-  transition-property: background-color;
-  transition-duration: 0.5s;
+  background-color: transparent;
+  background: rgba(255, 255, 255, 0.5);
+  color: rgb(0, 0, 0);
 }
 
 window#waybar.hidden {
@@ -30,7 +30,7 @@ window#waybar.hidden {
   padding: 2px 12px;
   margin: 4px 3px;
   border-radius: 4px;
-  background-color: @background;
+  background-color: transparent;
   color: @foreground;
 }
 
@@ -67,7 +67,7 @@ window#waybar.hidden {
   border-radius: 4px;
   margin: 4px 3px;
   padding: 2px 12px;
-  background-color: @background;
+  background-color: transparent;
   color: @background;
 }
 #custom-kernel {
@@ -98,22 +98,22 @@ window#waybar.hidden {
 
 
 #memory {
-  background-color: @orange;
+  background-color: transparent;
 }
 
 #battery {
-  background-color: @green;
+  background-color: transparent;
 }
 
 #battery.warning,
 #battery.critical,
 #battery.urgent {
-  background-color: @red;
-  color: @yellow;
+  background-color: transparent;
+  color: transparent;
 }
 
 #battery.charging {
-  background-color: @green;
+  background-color: transparent;
   color: #181825;
 }
 
@@ -122,16 +122,16 @@ window#waybar.hidden {
 }
 
 #pulseaudio {
-  background-color: @pink;
+  background-color: transparent;
 }
 
 #network {
-  background-color: @cyan;
+  background-color: transparent;
   padding-right: 17px;
 }
 
 #clock {
-  background-color: @purple;
+  background-color: transparent;
 }
 
 tooltip {
@@ -146,13 +146,13 @@ tooltip label {
 }
 
 #custom-wlsunset {
-  background-color: @yellow;
+  background-color: transparent;
 }
 
 #custom-keyboard {
-  background-color: @red;
+  background-color: transparent;
 }
 
 #custom-username {
-  background-color: @pink;
+  background-color: transparent;
 }
