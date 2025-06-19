@@ -31,7 +31,7 @@ window#waybar.hidden {
   margin: 4px 3px;
   border-radius: 4px;
   background-color: transparent;
-  color: @foreground;
+  color: @background;
 }
 
 #workspaces button.active {
