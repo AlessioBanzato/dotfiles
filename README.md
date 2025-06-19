@@ -4,6 +4,10 @@ Personal Linux dotfiles and other stuff like [fonts](https://github.com/AlessioB
 
 There is also an `install.sh` script that creates symlinks and does a rebuild of the fonts' cache.
 
+## Branches
+
+I tried to separate general configs from theme customizations. The `main` branch contains all general configs, while the other branches are dedicated to different themes (`light`, `dracula`, ...).
+
 ## Repo structure (directories only)
 
 ```
@@ -14,7 +18,6 @@ There is also an `install.sh` script that creates symlinks and does a rebuild of
 │   ├── hypr
 │   ├── neofetch
 │   ├── rofi
-│   │   └── themes
 │   └── waybar
 │       └── scripts
 ├── .local
