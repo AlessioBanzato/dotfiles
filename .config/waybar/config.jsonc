@@ -12,7 +12,7 @@
         "custom/wlsunset",
         "memory",
         "network",
-        "pulseaudio",
+	"pulseaudio",
         "battery",
         "clock",
         "custom/username"
