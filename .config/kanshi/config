@@ -1,0 +1,8 @@
+profile monitor {
+    output eDP-1 disable
+    output HDMI-A-1 enable
+}
+
+profile laptop {
+    output eDP-1 enable
+}
