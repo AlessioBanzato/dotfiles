@@ -4,7 +4,6 @@
     "spacing": 0,
     "height": 32,
     "modules-left": [
-        "custom/logo",
         "hyprland/workspaces"
     ],
     "modules-right": [
@@ -13,7 +12,7 @@
         "custom/wlsunset",
         "memory",
         "network",
-        "pulseaudio",
+	"pulseaudio",
         "battery",
         "clock",
         "custom/username"
@@ -57,7 +56,12 @@
         "format": "  {:%a, %b %d - %H:%M}"
     },
     "network": {
+<<<<<<< HEAD
         "format-wifi" : "{icon}",
+=======
+        "format-wifi": "{icon}",
+        "format-alt" : "{icon}  {essid}",
+>>>>>>> light
         "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
         "format-alt": "{icon}  {essid}",
         "format-ethernet": "󰀂",
