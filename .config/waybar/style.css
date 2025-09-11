@@ -1,4 +1,4 @@
-@import url("../../.dotfiles/.config/waybar/colors.css");
+@import url("../../.dotfiles/.config/waybar/colors/light.css");
 
 * {
   border: 2px;
@@ -10,7 +10,7 @@
 }
 
 window#waybar {
-  background-color: transparent;
+  background-color: @transparent;
   background: rgba(255, 255, 255, 0.5);
   color: rgb(0, 0, 0);
 }
@@ -20,7 +20,7 @@ window#waybar.hidden {
 }
 
 #workspaces {
-  background-color: transparent;
+  background-color: @transparent;
 }
 
 #workspaces button {
@@ -30,13 +30,13 @@ window#waybar.hidden {
   padding: 2px 12px;
   margin: 4px 3px;
   border-radius: 4px;
-  background-color: transparent;
-  color: @background;
+  background-color: @transparent;
+  color: @foreground;
 }
 
 #workspaces button.active {
   color: #1e1e2e;
-  background-color: @foreground;
+  background-color: @button;
 }
 
 #workspaces button:hover {
@@ -67,8 +67,8 @@ window#waybar.hidden {
   border-radius: 4px;
   margin: 4px 3px;
   padding: 2px 12px;
-  background-color: transparent;
-  color: @background;
+  background-color: @transparent;
+  color: @foreground;
 }
 #custom-kernel {
   background-color: @red;
@@ -98,22 +98,22 @@ window#waybar.hidden {
 
 
 #memory {
-  background-color: transparent;
+  background-color: @transparent;
 }
 
 #battery {
-  background-color: transparent;
+  background-color: @transparent;
 }
 
 #battery.warning,
 #battery.critical,
 #battery.urgent {
-  background-color: transparent;
-  color: transparent;
+  background-color: @transparent;
+  color: @transparent;
 }
 
 #battery.charging {
-  background-color: transparent;
+  background-color: @transparent;
   color: #181825;
 }
 
@@ -122,16 +122,16 @@ window#waybar.hidden {
 }
 
 #pulseaudio {
-  background-color: transparent;
+  background-color: @transparent;
 }
 
 #network {
-  background-color: transparent;
+  background-color: @transparent;
   padding-right: 17px;
 }
 
 #clock {
-  background-color: transparent;
+  background-color: @transparent;
 }
 
 tooltip {
@@ -146,13 +146,13 @@ tooltip label {
 }
 
 #custom-wlsunset {
-  background-color: transparent;
+  background-color: @transparent;
 }
 
 #custom-keyboard {
-  background-color: transparent;
+  background-color: @transparent;
 }
 
 #custom-username {
-  background-color: transparent;
+  background-color: @transparent;
 }
