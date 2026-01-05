@@ -1,11 +1,18 @@
 configuration {
     modes: "window,drun,run,ssh";
-    font: "mono 12";
-    location: 0;
-    yoffset: 0;
-    xoffset: 0;
+    font: "JetBrainsMono Nerd Font Medium 12";
+/*	location: 0;*/
+/*	yoffset: 0;*/
+/*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
-/*	show-icons: false;*/
+    show-icons: true;
+/*	preview-cmd: ;*/
+/*	on-selection-changed: ;*/
+/*	on-mode-changed: ;*/
+/*	on-entry-accepted: ;*/
+/*	on-menu-canceled: ;*/
+/*	on-menu-error: ;*/
+/*	on-screenshot-taken: ;*/
 /*	terminal: "rofi-sensible-terminal";*/
 /*	ssh-client: "ssh";*/
 /*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
@@ -17,6 +24,7 @@ configuration {
 /*	icon-theme: ;*/
 /*	drun-match-fields: "name,generic,exec,categories,keywords";*/
 /*	drun-categories: ;*/
+/*	drun-exclude-categories: ;*/
 /*	drun-show-actions: false;*/
 /*	drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
 /*	drun-url-launcher: "xdg-open";*/
@@ -25,6 +33,7 @@ configuration {
 /*	sort: false;*/
 /*	sorting-method: "normal";*/
 /*	case-sensitive: false;*/
+/*	case-smart: false;*/
 /*	cycle: true;*/
 /*	sidebar-mode: false;*/
 /*	hover-select: false;*/
@@ -56,7 +65,8 @@ configuration {
 /*	application-fallback-icon: ;*/
 /*	refilter-timeout-limit: 300;*/
 /*	xserver-i300-workaround: false;*/
-/*	completer-mode: "recursivebrowser";*/
+/*	completer-mode: "filebrowser";*/
+/*	imdkit: true;*/
 /*	pid: "/run/user/1000/rofi.pid";*/
 /*	display-window: ;*/
 /*	display-run: ;*/
@@ -138,6 +148,8 @@ configuration {
 /*	kb-select-10: "Super+0";*/
 /*	kb-entry-history-up: "Control+Up";*/
 /*	kb-entry-history-down: "Control+Down";*/
+/*	kb-matcher-up: "Super+equal";*/
+/*	kb-matcher-down: "Super+minus";*/
 /*	ml-row-left: "ScrollLeft";*/
 /*	ml-row-right: "ScrollRight";*/
 /*	ml-row-up: "ScrollUp";*/
