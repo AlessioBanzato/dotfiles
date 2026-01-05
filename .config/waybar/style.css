@@ -1,7 +1,7 @@
-@import url("../../.dotfiles/.config/waybar/colors/light.css");
+@import url("../../.dotfiles/.config/waybar/colors/dracula.css");
 
 * {
-  border: 2px;
+  border: none;
   border-radius: 0;
   min-height: 0;
   font-family: JetBrainsMono Nerd Font;
@@ -11,8 +11,8 @@
 
 window#waybar {
   background-color: @transparent;
-  background: rgba(255, 255, 255, 0.5);
-  color: rgb(0, 0, 0);
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
 
 window#waybar.hidden {
@@ -20,7 +20,7 @@ window#waybar.hidden {
 }
 
 #workspaces {
-  background-color: @transparent;
+  background-color: transparent;
 }
 
 #workspaces button {
@@ -36,7 +36,7 @@ window#waybar.hidden {
 
 #workspaces button.active {
   color: #1e1e2e;
-  background-color: @button;
+  background-color: @foreground;
 }
 
 #workspaces button:hover {
@@ -62,14 +62,28 @@ window#waybar.hidden {
 #network,
 #clock,
 #tray,
-#custom-keyboard,
-#custom-username {
+#custom-username,
+#custom-keyboard{
   border-radius: 4px;
   margin: 4px 3px;
   padding: 2px 12px;
+  color: @background;
+  background-color: @transparent;
+}
+
+#tray {
   background-color: @transparent;
   color: @foreground;
 }
+
+#custom-username {
+  color: @pink;
+}
+
+#custom-keyboard {
+  color: @foreground;
+}
+
 #custom-kernel {
   background-color: @red;
 }
@@ -80,7 +94,7 @@ window#waybar.hidden {
 }
 
 #custom-diskfree {
-  background-color: #fc9867;
+  color: @orange;
 }
 
 #custom-logo {
@@ -98,23 +112,21 @@ window#waybar.hidden {
 
 
 #memory {
-  background-color: @transparent;
+  color: @orange;
 }
 
 #battery {
-  background-color: @transparent;
+  color: @green;
 }
 
 #battery.warning,
 #battery.critical,
 #battery.urgent {
-  background-color: @transparent;
-  color: @transparent;
+  color: @red;
 }
 
 #battery.charging {
-  background-color: @transparent;
-  color: #181825;
+  color: @green;
 }
 
 #backlight {
@@ -122,16 +134,16 @@ window#waybar.hidden {
 }
 
 #pulseaudio {
-  background-color: @transparent;
+  color: @pink;
 }
 
 #network {
-  background-color: @transparent;
+  color: @cyan;
   padding-right: 17px;
 }
 
 #clock {
-  background-color: @transparent;
+  color: @purple;
 }
 
 tooltip {
@@ -146,13 +158,5 @@ tooltip label {
 }
 
 #custom-wlsunset {
-  background-color: @transparent;
-}
-
-#custom-keyboard {
-  background-color: @transparent;
-}
-
-#custom-username {
-  background-color: @transparent;
+  color: @yellow;
 }

@@ -149,7 +149,7 @@
         "tooltip": false
     },
     "custom/keyboard": {
-        "format": "  US",
+        "format": "  IT",
         "on-click": "$HOME/.config/waybar/scripts/switch_eng.sh",
         "on-click-right": "$HOME/.config/waybar/scripts/switch_ita.sh",
         "tooltip": false
