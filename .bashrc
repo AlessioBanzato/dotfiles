@@ -19,6 +19,8 @@ alias copate="systemctl poweroff"
 
 alias reload_waybar="pkill waybar && waybar & disown"
 
+alias full-upgrade="sudo pacman -Syu"
+
 case ${TERM} in
   Eterm*|alacritty*|aterm*|foot*|gnome*|konsole*|kterm*|putty*|rxvt*|tmux*|xterm*)
     PROMPT_COMMAND+=('printf "\033]0;%s@%s:%s\007" "${USER}" "${HOSTNAME%%.*}" "${PWD/#$HOME/\~}"')
@@ -47,3 +49,4 @@ export NVM_DIR="$HOME/.nvm"
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:/usr/bin/vendor_perl
